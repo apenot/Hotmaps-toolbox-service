@@ -30,7 +30,7 @@ EXPOSE 80
 
 # Start server
 RUN mkdir -p /var/log/supervisor
-COPY supervisord.conf /etc/supervisord.conf
+COPY api/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Start processes
 CMD ["/usr/bin/supervisord"]
