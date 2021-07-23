@@ -19,7 +19,7 @@ WORKDIR /api
 
 RUN pip3 install gunicorn
 
-COPY api/requirements/api/requirements.txt requirements/api
+COPY requirements/api/requirements.txt requirements/api
 
 RUN pip3 install -r requirements/api/requirements.txt
 
@@ -30,7 +30,7 @@ EXPOSE 80
 
 # Start server
 RUN mkdir -p /var/log/supervisor
-COPY api/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Start processes
 CMD ["/usr/bin/supervisord"]
